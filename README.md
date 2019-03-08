@@ -1,4 +1,5 @@
 # ProgramaticallySettingApaTabBarController
+
 ````swift 
 //ProgramaticallySettingApaTabBarController
 //
@@ -60,71 +61,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-``` swift 
-import UIKit
-
-class Item: NSObject {
-    var name: String
-    var valueInDollars: Int
-    var serialNumber: String?
-    let dateCreated: Date
-    // A designated initializer is a primary initializer for the class.
-    // Every class has at least one designated initializer.
-    init(name: String, serialNumber: String?, valueInDollars: Int) {
-        self.name = name
-        self.valueInDollars = valueInDollars
-        self.serialNumber = serialNumber
-        self.dateCreated = Date()
-        super.init()
-    }
-}
-```
-
-``` swift 
-import Foundation
-
-extension Item {
-    // convenience initializers are optional.
-    convenience init(random: Bool = false) {
-        if random {
-            let adjectives = ["Fluffy", "Rusty", "Shiny", "Good", "New", "First", "Last", "Long" ]
-            let nouns = ["Bear", "Spork", "Mac", "iphone", "cat", "T.V"]
-            var idx = arc4random_uniform(UInt32(adjectives.count))
-            let randomAdjective = adjectives[Int(idx)]
-            idx = arc4random_uniform(UInt32(nouns.count))
-            let randomNoun = nouns[Int(idx)]
-            let randomName = "\(randomAdjective) \(randomNoun)"
-            let randomValue = Int(arc4random_uniform(100))
-            let randomSerialNumber = UUID().uuidString.components(separatedBy: "-").first!
-            self.init(name: randomName, serialNumber: randomSerialNumber, valueInDollars: randomValue)
-        } else {
-            self.init(name: "", serialNumber: nil, valueInDollars: 0)
-        }
-    }
-}
-```
-``` swift 
-import UIKit
-
-// ItemStore is a Swift base class – it does not inherit from any other class.
-// Unlike the Item class that you defined earlier, ItemStore does not require any of the behavior that NSObject affords.
-class ItemStore {
-    var items = [Item]()
-    
-    init() {
-        for _ in 0..<10 {
-            createItem()
-        }
-    }
-    
-    // @discardableResult annotation means that a caller of this function is free to ignore the result of calling this function.
-    // https://github.com/apple/swift-evolution/blob/master/proposals/0047-nonvoid-warn.md
-    
-    @discardableResult func createItem() -> Item {
-        let newItem = Item(random: true)
-        items.append(newItem)
-        return newItem
-    }
-}
-```
 
