@@ -1,5 +1,7 @@
 # ProgramaticallySettingApaTabBarController
 
+![Screen Shot 2020-01-22 at 0 52 45](https://user-images.githubusercontent.com/24994818/72871856-85ce7700-3cb1-11ea-8cdd-ae31409a0b3e.png)
+
 # In AppDelegate
 
 ````swift 
