@@ -4,7 +4,7 @@
 
 # In AppDelegate
 
-````swift 
+```swift 
 let storyboard = UIStoryboard(name: "MyMain", bundle: nil)
 let firstViewController = storyboard.instantiateViewController(withIdentifier: "firstViewController")
 let secondViewController = storyboard.instantiateViewController(withIdentifier: "secondViewController")
