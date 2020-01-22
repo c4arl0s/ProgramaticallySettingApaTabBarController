@@ -18,6 +18,6 @@ let storyboard = UIStoryboard(name: "MyMain", bundle: nil)
         thirdViewController.tabBarItem.title = "controller 3"
 ```
 
-
+![Screen Shot 2020-01-22 at 0 49 28](https://user-images.githubusercontent.com/24994818/72871879-9979dd80-3cb1-11ea-8516-99e36348eb7d.png)
 
 
